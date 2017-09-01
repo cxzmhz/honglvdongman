@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>红旅动漫-连载</title>
+	<script src="lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="lib/template/template-web.js"></script>
+	<link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+	<script src="lib/swiper/js/swiper.min.js"></script>
+	<link rel="stylesheet" href="font/iconfont.css">
+	<link rel="stylesheet/less" href="less/base.less">
+	<link rel="stylesheet/less" href="less/index.less">
+	<script src="lib/less/less.js"></script>
+	<script src="js/lianzai.js"></script>
+</head>
+<body>
+	<div id="layout">
+		<div id="lz_topbar">
+			<i class="iconfont icon-back"></i>
+			<h1>连载动漫</h1>
+		</div>
+
+		<script type="text/html" id="lz_template">
+		{{each}}
+			<div class="lz_content clearfix">
+				<a href="{{$value.url}}">
+					<div class="lz_leftbox">
+						<img src="{{$value.img}}" alt="">
+					</div>
+					<div class="lz_rightbox">
+						<h2>{{$value.name}}</h2>
+						<p>{{$value.episode}}</p>
+						<p>{{$value.updateTime}}</p>
+						<p>下载次数：{{$value.downloadCount}}</p>
+					</div>
+				</a>
+			</div>
+		{{/each}}
+		</script>
+		<div id="lz_main_content">
+			
+		</div>
+
+	</div>
+</body>
+</html>

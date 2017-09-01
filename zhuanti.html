@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>红旅动漫-连载</title>
+	<script src="lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="lib/template/template-web.js"></script>
+	<link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+	<script src="lib/swiper/js/swiper.min.js"></script>
+	<link rel="stylesheet" href="font/iconfont.css">
+	<link rel="stylesheet/less" href="less/base.less">
+	<link rel="stylesheet/less" href="less/index.less">
+	<script src="lib/less/less.js"></script>
+	<script src="js/zhuanti.js"></script>
+</head>
+<body>
+	<div id="layout">
+		<div id="zt_topbar">
+			<i class="iconfont icon-back"></i>
+			<h1>专题列表</h1>
+		</div>
+
+		<script type="text/html" id="zt_template">
+		{{each}}
+			<div class="zt_content clearfix">
+				<a href="{{$value.url}}">
+					<img src="{{$value.img}}" alt="">
+					<h3>{{$value.title}}</h2>
+				</a>
+			</div>
+		{{/each}}
+		</script>
+		<div id="zt_main_content">
+			
+		</div>
+
+	</div>
+</body>
+</html>

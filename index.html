@@ -1,17 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>红旅动漫</title>
+	<script src="lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="lib/template/template-web.js"></script>
+	<link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+	<script src="lib/swiper/js/swiper.min.js"></script>
+	<link rel="stylesheet" href="font/iconfont.css">
 	<link rel="stylesheet/less" href="less/base.less">
 	<link rel="stylesheet/less" href="less/index.less">
 	<script src="lib/less/less.js"></script>
 	<script src="js/index.js"></script>
 </head>
+
 <body>
 	<div id="layout">
+		<div id="layout_second">
+			
+			<header id="topbar">
+				<i class="iconfont icon-category"></i>
+				<h1>红旅动漫</h1>
+				<i class="iconfont icon-search"></i>
+			</header>
 
+			<script type="text/html" id="slide_template">
+				{{each}}
+				<div class="swiper-slide">
+					<a href="{{$value.url}}">
+							<img src="{{$value.img}}" alt="">
+							<p>{{$value.title}}</p>
+						</a>
+				</div>
+				{{/each}}
+			</script>
+			<div id="swiper-container">
+				<div class="swiper-wrapper">
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+
+			<script type="text/html" id="tab_template">
+				{{each}}
+				<div class="content">
+					<a href="{{$value.url}}">
+						<img src="{{$value.img}}" alt="">
+						<p>{{$value.update}}</p>
+						<h3>{{$value.name}}</h3>
+					</a>
+				</div>
+				{{/each}}
+			</script>
+			<section id="tab">
+				<div class="tabbar">
+					<ul class="clearfix">
+						<li type='1' class="active">新增连载</li>
+						<li type='2'>新增完结</li>
+						<li type='3'>推荐连载</li>
+						<li type='4'>推荐完结</li>
+					</ul>
+				</div>
+				<div class="tabContent clearfix">
+					
+				</div>
+			</section>
+			<div id="zhexiubu"></div>
+		</div>
+		<div id="module">
+			<h2>红旅动漫</h2>
+			<ul>
+				<li><a href="lianzai.html" id="lianzai">连载动漫-get<i class="iconfont icon-more"></i></a></li>
+				<li><a href="zhuanti.html" id="zhuanti">专题列表-get<i class="iconfont icon-more"></i></a></li>
+				<li><a href="#">关于<i class="iconfont icon-more"></i></a></li>
+			</ul>
+		</div>
+		
 	</div>
 </body>
+
 </html>
